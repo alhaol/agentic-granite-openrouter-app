@@ -1,0 +1,36 @@
+services:
+  # The Main Streamlit Application
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: granite_agent_app
+    ports:
+      - "7777:7777"
+    env_file:
+      - .env
+    volumes:
+      - .:/app  # Live reload: changes in your local folder reflect in the container
+    command: ["streamlit", "run", "app.py", "--server.port=7777", "--server.address=0.0.0.0"]
+
+  # The Development Environment (JupyterLab)
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile.jupyter
+    container_name: granite_agent_notebooks
+    ports:
+      - "7799:7799"
+    env_file:
+      - .env
+    volumes:
+      - .:/app  # Mounts the whole project so you can edit notebooks locally and run them in docker
+    # Command disables all authentication (token and password) for easy access
+    command: >
+      jupyter lab 
+      --ip=0.0.0.0 
+      --port=7799 
+      --no-browser 
+      --allow-root 
+      --NotebookApp.token='' 
+      --NotebookApp.password=''

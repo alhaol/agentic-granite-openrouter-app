@@ -1,0 +1,19 @@
+# Security: Never copy secrets into the image
+
+**/.env *_/.env._ **/_.pem **/_.key
+
+# Python: Ignore local virtual environments and cache
+
+.venv/ .uv/ **pycache**/ *.py[cod] *$py.class
+
+# OS: Ignore system files
+
+.DS_Store Thumbs.db
+
+# Git: Ignore version control
+
+.git/ .gitignore
+
+# Project Specific
+
+README.md

@@ -1,0 +1,16 @@
+[project]
+name = "granite-agent"
+version = "0.1.0"
+description = "Granite ReAct Agent with Streamlit and LangGraph"
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit>=1.32.0",
+    "langchain>=0.1.0",
+    "langchain-openai>=0.0.8",
+    "langchain-community>=0.0.10",
+    "langgraph>=0.0.10",
+    "python-dotenv>=1.0.0",
+]
+
+[dependency-groups]
+dev = []
