@@ -2,7 +2,9 @@
 
 A modular AI agent application utilizing the **IBM Granite 4.0** model (via OpenRouter) to perform reasoning tasks. This project uses a modern Python stack with **LangGraph** for agent orchestration, **Streamlit** for the frontend, **uv** for high-speed dependency management, and **Docker** for containerization.
 
-![alt text](UI.png)
+
+![alt text](demo.gif)
+
 
 ## 🌟 Features
 
